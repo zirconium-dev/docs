@@ -1,0 +1,68 @@
+baseURL = 'https://zirconium-dev.github.io/'
+languageCode = 'en-us'
+title = 'Zirconium Docs'
+theme = 'hugo-book'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
+copyright = 'MIT License'
+enableGitInfo = true
+
+[markup.tableOfContents]
+  startLevel = 1
+
+[markup.highlight]
+  style = 'base16-snazzy'
+
+[languages]
+[languages.en]
+  languageName = 'English'
+  contentDir = 'content'
+  weight = 1
+
+# [languages.br]
+#   languageName = 'Brazilian Portuguese'
+#   contentDir = 'content.br'
+#   weight = 2
+
+[menu]
+[[menu.before]]
+  name = 'Welcome to Zirconium'
+  pageRef = '/'
+  weight = 10
+
+[[menu.after]]
+  name = 'Zirconium on Github'
+  url = 'https://github.com/zirconium-dev/zirconium'
+  weight = 10
+
+[[menu.after]]
+  name = 'Zirconium on Bluesky'
+  url = 'https://bsky.app/profile/zirconium.gay'
+  weight = 10
+
+[params]
+  BookTheme = 'auto'
+  BookFavicon = 'favicon.png'
+  BookLogo = 'logo-z.svg'
+  BookSection = 'docs'
+  BookRepo = 'https://github.com/zirconium-dev/zirconium-docs/'
+  BookLastChangeLink = '{{ .Site.Params.BookRepo }}/commit/{{ .GitInfo.Hash }}'
+  BookEditLink = '{{ .Site.Params.BookRepo }}/edit/main/{{ .Path }}'
+
+  # (Optional, default 'January 2, 2006') Configure the date format used on the pages
+  # - In git information
+  # - In blog posts
+  # https://gohugo.io/functions/time/format/
+  BookDateFormat = '2 January 2006'
+  BookSearch = true
+  BookComments = false
+  BookPortableLinks = 'warning'
+  BookServiceWorker = 'precache'
