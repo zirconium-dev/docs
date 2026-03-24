@@ -9,6 +9,7 @@ const config = {
   output: 'export',
   trailingSlash: true,
   reactStrictMode: true,
+  basePath: isProd ? `/${repoName}` : "",
   assetPrefix: isProd
     ? `https://zirconium-dev.github.io/docs/`
     : "",
